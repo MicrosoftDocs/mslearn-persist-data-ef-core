@@ -1,4 +1,5 @@
-using ContosoPizza.Data;
+using ContosoPizza.DataAccess.Data;
+using ContosoPizza.DataAccess.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<PizzaContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("PizzaContext")));
+
+builder.Services.AddScoped<PizzaService>();
 
 var app = builder.Build();
 

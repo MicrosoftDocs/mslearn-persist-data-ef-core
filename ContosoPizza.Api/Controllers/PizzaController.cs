@@ -1,5 +1,5 @@
-using ContosoPizza.Data;
-using ContosoPizza.Models;
+using ContosoPizza.DataAccess.Services;
+using ContosoPizza.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,23 +9,24 @@ namespace ContosoPizza.Controllers;
 [Route("[controller]")]
 public class PizzaController : ControllerBase
 {
-    PizzaContext _context;
+    PizzaService _service;
     
-    public PizzaController(PizzaContext context)
+    public PizzaController(PizzaService service)
     {
-        _context = context;
+        _service = service;
     }
 
     [HttpGet]
     public ActionResult<IEnumerable<Pizza>> GetAll()
     {
-        return new OkObjectResult(_context.Pizzas!.Include(p => p.Ingredients).AsEnumerable());
+        return new OkObjectResult(_service.GetAll());
     }
 
     [HttpGet("{id}")]
     public ActionResult<Pizza> Get(int id)
     {
-        var pizza = _context.Pizzas!.Include(p => p.Ingredients).Where(p => p.Id == id).FirstOrDefault();
+        var pizza = _service.GetById(id);
+
         if(pizza is not null)
         {
             return new OkObjectResult(pizza);

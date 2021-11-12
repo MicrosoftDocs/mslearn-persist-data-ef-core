@@ -1,4 +1,8 @@
-using ContosoPizza.Data;
+using ContosoPizza.DataAccess.Data;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.VisualStudio.Web.CodeGeneration.Design;
 
 public static class Extensions
 {
