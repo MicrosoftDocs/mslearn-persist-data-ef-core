@@ -5,27 +5,33 @@ using Microsoft.EntityFrameworkCore;
 namespace ContosoPizza.DataAccess.Services;
 public class PizzaService
 {
-    private readonly PizzaContext _context;
-
-    public PizzaService(PizzaContext context)
+    public PizzaService()
     {
-        _context = context;
+        
     }
 
     public IEnumerable<Pizza> GetAll()
     {
-        return _context.Pizzas!
-            .Include(p => p.Sauce)
-            .Include(p => p.Toppings)
-            .AsEnumerable();
+        throw new NotImplementedException();
     }
 
     public Pizza? GetById(int id)
     {
-        return _context.Pizzas!
-            .Include(p => p.Sauce)
-            .Include(p => p.Toppings)
-            .Where(p => p.Id == id)
-            .FirstOrDefault();
+        throw new NotImplementedException();
+    }
+
+    public void DeleteById(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Pizza? Create(Pizza newPizza)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Pizza? Update(int id, Pizza updatedPizza)
+    {
+        throw new NotImplementedException();
     }
 }
