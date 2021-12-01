@@ -1,8 +1,6 @@
 using ContosoPizza.DataAccess.Services;
 using ContosoPizza.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
 namespace ContosoPizza.Controllers;
 
 [ApiController]
@@ -75,8 +73,5 @@ public class PizzaController : ControllerBase
         {
             return new NotFoundResult();
         }
-
-
     }
-
 }
