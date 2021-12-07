@@ -1,6 +1,4 @@
-using ContosoPizza.DataAccess.Data;
 using ContosoPizza.Domain.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace ContosoPizza.DataAccess.Services;
 public class PizzaService
