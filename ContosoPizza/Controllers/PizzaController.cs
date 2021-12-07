@@ -1,6 +1,7 @@
-using ContosoPizza.DataAccess.Services;
-using ContosoPizza.Domain.Models;
+using ContosoPizza.Services;
+using ContosoPizza.Models;
 using Microsoft.AspNetCore.Mvc;
+
 namespace ContosoPizza.Controllers;
 
 [ApiController]

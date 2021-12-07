@@ -10,9 +10,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ContosoPizza.Domain\ContosoPizza.Domain.csproj" />
-    <ProjectReference Include="..\ContosoPizza.DataAccess\ContosoPizza.DataAccess.csproj" />
-  </ItemGroup>
-
 </Project>

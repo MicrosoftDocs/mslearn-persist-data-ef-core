@@ -1,6 +1,7 @@
-using ContosoPizza.Domain.Models;
+using ContosoPizza.Models;
 
-namespace ContosoPizza.DataAccess.Services;
+namespace ContosoPizza.Services;
+
 public class PizzaService
 {
     public PizzaService()

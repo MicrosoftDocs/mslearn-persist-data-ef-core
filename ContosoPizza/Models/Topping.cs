@@ -1,11 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
-namespace ContosoPizza.Domain.Models;
+namespace ContosoPizza.Models;
 
-public class Sauce
+public class Topping
 {
     public int Id { get; set; }
-
     public string? Name { get; set; }
-    public bool IsVeganFriendly { get; set; }
 }
