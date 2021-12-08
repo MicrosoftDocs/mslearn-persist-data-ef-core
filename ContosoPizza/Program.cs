@@ -9,6 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+// Add the AddDbContextCode
+
 builder.Services.AddScoped<PizzaService>();
 
 var app = builder.Build();
