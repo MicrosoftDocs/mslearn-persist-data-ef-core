@@ -19,17 +19,17 @@ public class PizzaService
         throw new NotImplementedException();
     }
 
-    public void DeleteById(int id)
-    {
-        throw new NotImplementedException();
-    }
-
     public Pizza? Create(Pizza newPizza)
     {
         throw new NotImplementedException();
     }
 
     public Pizza? Update(int id, Pizza updatedPizza)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DeleteById(int id)
     {
         throw new NotImplementedException();
     }
