@@ -16,32 +16,33 @@ public class PizzaController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Pizza>> GetAll()
+    public IEnumerable<Pizza> GetAll()
+    
     {
-        return new OkObjectResult(_service.GetAll());
+        return _service.GetAll();
     }
 
     [HttpGet("{id}")]
-    public ActionResult<Pizza> Get(int id)
+    public ActionResult<Pizza> GetById(int id)
     {
         var pizza = _service.GetById(id);
 
         if(pizza is not null)
         {
-            return new OkObjectResult(pizza);
+            return pizza;
         }
         else
         {
-            return new NotFoundResult();
+            return NotFound();
         }
     }
 
 
     [HttpPost]
-    public IActionResult Create(Pizza pizza)
+    public IActionResult Create(Pizza newPizza)
     {
-        var newPizza = _service.Create(pizza);
-        return new CreatedResult(newPizza!.Id.ToString(), newPizza);
+        var pizza = _service.Create(newPizza);
+        return CreatedAtAction(nameof(GetById), new { id = pizza.Id }, pizza);
     }
 
     [HttpPut("{id}")]
@@ -51,12 +52,12 @@ public class PizzaController : ControllerBase
 
         if(pizzaToUpdate is not null)
         {
-            var updatedPizza = _service.Update(id, pizza);
-            return new OkObjectResult(updatedPizza);    
+            _service.Update(id, pizza);
+            return NoContent();    
         }
         else
         {
-            return new NotFoundResult();
+            return NotFound();
         }
     }
 
@@ -68,11 +69,11 @@ public class PizzaController : ControllerBase
         if(pizza is not null)
         {
             _service.DeleteById(id);
-            return new OkResult();
+            return Ok();
         }
         else
         {
-            return new NotFoundResult();
+            return NotFound();
         }
     }
 }
