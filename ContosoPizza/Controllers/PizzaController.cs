@@ -17,7 +17,6 @@ public class PizzaController : ControllerBase
 
     [HttpGet]
     public IEnumerable<Pizza> GetAll()
-    
     {
         return _service.GetAll();
     }
