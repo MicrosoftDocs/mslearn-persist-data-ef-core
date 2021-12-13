@@ -26,4 +26,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// Add the CreateDbInNotExists method call
+
 app.Run();
