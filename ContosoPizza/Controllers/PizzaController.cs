@@ -51,7 +51,7 @@ public class PizzaController : ControllerBase
 
         if(pizzaToUpdate is not null)
         {
-            _service.Update(id, pizza);
+            _service.Update(pizza);
             return NoContent();    
         }
         else

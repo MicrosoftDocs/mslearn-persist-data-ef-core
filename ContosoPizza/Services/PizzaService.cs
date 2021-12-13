@@ -24,7 +24,7 @@ public class PizzaService
         throw new NotImplementedException();
     }
 
-    public Pizza? Update(int id, Pizza updatedPizza)
+    public void Update(Pizza updatedPizza)
     {
         throw new NotImplementedException();
     }
