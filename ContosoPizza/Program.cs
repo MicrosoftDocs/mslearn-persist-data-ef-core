@@ -1,5 +1,6 @@
 using ContosoPizza.Services;
-// Additional using declarations
+using ContosoPizza.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,9 +8,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add the PizzaContext
+builder.Services.AddDbContext<PizzaContext>(options =>
+    options.UseSqlite("Data Source=ContosoPizza.db"));
 
-// Add the PromotionsContext
+builder.Services.AddDbContext<PromotionsContext>(options =>
+    options.UseSqlite("Data Source=./Promotions/Promotions.db"));
 
 builder.Services.AddScoped<PizzaService>();
 
@@ -28,6 +31,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Add the CreateDbInNotExists method call
+app.CreateDbIfNotExists();
 
 app.Run();
