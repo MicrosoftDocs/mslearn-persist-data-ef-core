@@ -24,7 +24,12 @@ public class PizzaService
         throw new NotImplementedException();
     }
 
-    public void Update(Pizza updatedPizza)
+    public void AddTopping(int PizzaId, int ToppingId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void UpdateSauce(int PizzaId, int SauceId)
     {
         throw new NotImplementedException();
     }

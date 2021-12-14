@@ -44,14 +44,30 @@ public class PizzaController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = pizza.Id }, pizza);
     }
 
-    [HttpPut("{id}")]
-    public IActionResult Update(int id, Pizza pizza)
+    [HttpPut("{id}/addtopping")]
+    public IActionResult AddTopping(int id, int toppingId)
     {
         var pizzaToUpdate = _service.GetById(id);
 
         if(pizzaToUpdate is not null)
         {
-            _service.Update(pizza);
+            _service.AddTopping(id, toppingId);
+            return NoContent();    
+        }
+        else
+        {
+            return NotFound();
+        }
+    }
+
+    [HttpPut("{id}/updatesauce")]
+    public IActionResult UpdateSauce(int id, int sauceId)
+    {
+        var pizzaToUpdate = _service.GetById(id);
+
+        if(pizzaToUpdate is not null)
+        {
+            _service.UpdateSauce(id, sauceId);
             return NoContent();    
         }
         else
