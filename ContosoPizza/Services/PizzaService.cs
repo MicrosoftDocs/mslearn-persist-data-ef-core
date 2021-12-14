@@ -1,8 +1,7 @@
-using ContosoPizza.DataAccess.Data;
-using ContosoPizza.Domain.Models;
-using Microsoft.EntityFrameworkCore;
+using ContosoPizza.Models;
 
-namespace ContosoPizza.DataAccess.Services;
+namespace ContosoPizza.Services;
+
 public class PizzaService
 {
     public PizzaService()
@@ -20,17 +19,22 @@ public class PizzaService
         throw new NotImplementedException();
     }
 
-    public void DeleteById(int id)
-    {
-        throw new NotImplementedException();
-    }
-
     public Pizza? Create(Pizza newPizza)
     {
         throw new NotImplementedException();
     }
 
-    public Pizza? Update(int id, Pizza updatedPizza)
+    public void AddTopping(int PizzaId, int ToppingId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void UpdateSauce(int PizzaId, int SauceId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DeleteById(int id)
     {
         throw new NotImplementedException();
     }

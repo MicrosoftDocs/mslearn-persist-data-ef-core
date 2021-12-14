@@ -1,18 +1,15 @@
-using ContosoPizza.DataAccess.Data;
-using ContosoPizza.DataAccess.Services;
-using Microsoft.EntityFrameworkCore;
+using ContosoPizza.Services;
+// Additional using declarations
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<PizzaContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("PizzaContext")));
+// Add the PizzaContext
+
+// Add the PromotionsContext
 
 builder.Services.AddScoped<PizzaService>();
 
@@ -31,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.CreateDbIfNotExists();
+// Add the CreateDbInNotExists method call
 
 app.Run();
