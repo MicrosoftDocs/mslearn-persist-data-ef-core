@@ -25,7 +25,7 @@ public class PizzaService
             .Include(p => p.Toppings)
             .Include(p => p.Sauce)
             .AsNoTracking()
-            .FirstOrDefault(p => p.Id == id);
+            .SingleOrDefault(p => p.Id == id);
     }
 
     public Pizza Create(Pizza newPizza)
