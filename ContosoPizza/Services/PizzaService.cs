@@ -36,6 +36,22 @@ public class PizzaService
         return newPizza;
     }
 
+    public void UpdateSauce(int PizzaId, int SauceId)
+    {
+        var pizzaToUpdate = _context.Pizzas!.Find(PizzaId);
+        var sauceToUpdate = _context.Sauces!.Find(SauceId);
+
+        if (pizzaToUpdate is null ||
+                sauceToUpdate is null)
+        {
+            throw new NullReferenceException("Pizza or sauce does not exist");
+        }
+
+        pizzaToUpdate!.Sauce = sauceToUpdate;
+
+        _context.SaveChanges();
+    }
+    
     public void AddTopping(int PizzaId, int ToppingId)
     {
         var pizzaToUpdate = _context.Pizzas!.Find(PizzaId);
@@ -52,23 +68,6 @@ public class PizzaService
             pizzaToUpdate!.Toppings = new List<Topping>();
         }
         pizzaToUpdate!.Toppings.Add(toppingToAdd!);
-
-        _context.Pizzas!.Update(pizzaToUpdate);
-        _context.SaveChanges();
-    }
-
-    public void UpdateSauce(int PizzaId, int SauceId)
-    {
-        var pizzaToUpdate = _context.Pizzas!.Find(PizzaId);
-        var sauceToUpdate = _context.Sauces!.Find(SauceId);
-
-        if (pizzaToUpdate is null ||
-                sauceToUpdate is null)
-        {
-            throw new NullReferenceException("Pizza or sauce does not exist");
-        }
-
-        pizzaToUpdate!.Sauce = sauceToUpdate;
 
         _context.Pizzas!.Update(pizzaToUpdate);
         _context.SaveChanges();
