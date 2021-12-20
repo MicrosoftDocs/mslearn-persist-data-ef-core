@@ -28,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Add the CreateDbInNotExists method call
+// Add the CreateDbIfNotExists method call
 
 app.Run();
