@@ -9,7 +9,8 @@ public class Role
     [Required]
     [MaxLength(100)]
     public string? Name { get; set; }
-    
+
     [System.Text.Json.Serialization.JsonIgnore]
     public ICollection<User>? users { get; set; }
+    // george suge
 }
