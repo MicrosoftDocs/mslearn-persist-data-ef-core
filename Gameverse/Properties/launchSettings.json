@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "ContosoPizza": {
+    "Gameverse": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

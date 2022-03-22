@@ -1,5 +1,5 @@
-using ContosoPizza.Services;
-// Additional using declarations
+using Gameverse.Services;
+using Gameverse.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,11 +7,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add the PizzaContext
+builder.Services.AddSqlite<UserContext>("Data Source=GameverseDatabase.db");
+
 
 // Add the PromotionsContext
 
-builder.Services.AddScoped<PizzaService>();
+builder.Services.AddScoped<UserService>();
 
 var app = builder.Build();
 
@@ -28,6 +29,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Add the CreateDbInNotExists method call
+app.CreateDbIfNotExists();
 
 app.Run();
