@@ -6,9 +6,9 @@ namespace Gameverse.Services;
 
 public class UserService
 {
-    private readonly UserContext _context;
+    private readonly GameverseContext _context;
 
-    public UserService(UserContext context)
+    public UserService(GameverseContext context)
     {
         _context = context;
     }
@@ -16,7 +16,7 @@ public class UserService
     public User? GetById(int id)
     {
         var user = _context.Users
-            .Include(p => p.Role)
+            .Include(p => p.Id)
             .AsNoTracking()
             .SingleOrDefault(p => p.Id == id);
         return user;

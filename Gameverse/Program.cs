@@ -7,12 +7,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSqlite<UserContext>("Data Source=GameverseDatabase.db");
+builder.Services.AddSqlite<GameverseContext>("Data Source=GameverseDatabase.db");
 
 
 // Add the PromotionsContext
 
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<ProductsService>();
+builder.Services.AddScoped<ShoppingCartsService>();
 
 var app = builder.Build();
 

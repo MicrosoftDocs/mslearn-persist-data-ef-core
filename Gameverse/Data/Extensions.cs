@@ -8,7 +8,7 @@ public static class Extensions
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<UserContext>();
+                var context = services.GetRequiredService<GameverseContext>();
                 if (context.Database.EnsureCreated())
                 {
                     DbInitializer.Initialize(context);

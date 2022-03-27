@@ -12,6 +12,7 @@ public class User
     public string? Email { get; set; }
     public string? Phone { get; set; }
     public string? Address { get; set; }
-
     public Role? Role { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore]
+    public ICollection<ProductShoppingCart>? ProductShoppingCarts {get; set;}
 }
