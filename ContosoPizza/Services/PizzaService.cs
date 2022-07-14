@@ -24,12 +24,12 @@ public class PizzaService
         throw new NotImplementedException();
     }
 
-    public void AddTopping(int PizzaId, int ToppingId)
+    public void AddTopping(int pizzaId, int toppingId)
     {
         throw new NotImplementedException();
     }
 
-    public void UpdateSauce(int PizzaId, int SauceId)
+    public void UpdateSauce(int pizzaId, int sauceId)
     {
         throw new NotImplementedException();
     }
