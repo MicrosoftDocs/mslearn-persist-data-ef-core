@@ -7,5 +7,7 @@
 	},
 
 	"customizations": {
-	}
+	},
+
+	"postCreateCommand": "dotnet dev-certs https"
 }
