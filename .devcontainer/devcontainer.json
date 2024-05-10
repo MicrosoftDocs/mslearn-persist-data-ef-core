@@ -9,5 +9,5 @@
 	"customizations": {
 	},
 
-	"postCreateCommand": "dotnet dev-certs https"
+	"postCreateCommand": "sudo dotnet workload update"
 }
